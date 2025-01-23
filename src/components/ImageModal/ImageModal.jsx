@@ -1,6 +1,6 @@
-import React from "react";
 import ReactModal from "react-modal";
 import styles from "./ImageModal.module.css";
+ReactModal.setAppElement("#root");
 
 const ImageModal = ({ selectedImage, closeModal }) => {
     return (
@@ -15,8 +15,8 @@ const ImageModal = ({ selectedImage, closeModal }) => {
             </button>
             {selectedImage && (
                 <img
-                    src={selectedImage.src}
-                    alt={selectedImage.alt || "Image"}
+                    src={selectedImage.urls.regular}
+                    alt={selectedImage.alt_description || "Image"}
                     className={styles.image}
                 />
             )}
